@@ -10,8 +10,6 @@
 /* Hide the images by default */
 .mySlides {
   display: none;
-  width: 800px;
-  height: auto;
 }
 
 /* Next & previous buttons */
@@ -86,4 +84,9 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.img{
+  width: 800px;
+  height: auto;
 }
