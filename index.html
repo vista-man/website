@@ -1,46 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Automatic Slideshow</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Car meet</title>
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
 </head>
 <body>
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img src="media/1.jpg" alt="Image 1">
-        </div>
 
-        <div class="slide fade">
-            <img src="media/2.jpg" alt="Image 2">
-        </div>
+  <h2 class="w3-center">Automatic Slideshow</h2>
 
-        <div class="slide fade">
-            <img src="media/3.jpg" alt="Image 3">
-        </div>
+  <div class="w3-content w3-section" style="max-width:800px">
+    <img class="mySlides" src="media/1.jpg" style="width:800px">
+    <img class="mySlides" src="media/2.jpg" style="width:800px">
+    <img class="mySlides" src="media/3.jpg" style="width:800px">
+    <img class="mySlides" src="media/4.jpg" style="width:800px">
+  </div>
+  
+  <script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+  </script>
 
-      </div>
-      <script>
-        let slideIndex = 0;
-          showSlides();
-
-          function showSlides() {
-          let slides = document.getElementsByClassName("slide");
-
-          for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-          }
-
-          slideIndex++;
-
-          if (slideIndex > slides.length) {
-          slideIndex = 1;
-          }
-
-          slides[slideIndex - 1].style.display = "block";
-          slides[slideIndex - 1].classList.add("fade");
-
-          setTimeout(showSlides, 2000); // Change the interval as needed
-        }
-      </script>
 </body>
 </html>
